@@ -13,9 +13,6 @@ export default function () {
   const { name } = router.query;
   const pname = name;
   const [data, setData] = useState({});
-  const navigationController = () => {
-    router.push("/");
-  };
 
   const query = gql`
     query Pokemon($name: String!) {
@@ -129,13 +126,13 @@ export default function () {
                 <div className=" flex flex-row justify-around">
                   <div className="">
                     <p className="font-bold">Weight</p>
-                    <p>{data?.weight * 0.0022} lbs</p>
+                    <p>{(data?.weight * 0.0022).toFixed(2)} lbs</p>
                   </div>
                   <div>
                     <p className="font-bold">Abilities</p>
                     <div className="flex flex-col">
                       {data?.abilities?.flat().map((ability, i) => (
-                        <span key={i}>
+                        <span className="text-xs" key={i}>
                           {ability?.ability?.name?.charAt(0).toUpperCase() +
                             ability?.ability?.name?.slice(1)}
                         </span>
@@ -209,13 +206,13 @@ export default function () {
         </div>
 
         {/* button to home */}
-        <div className="text-center  p-30">
-          <button
-            onClick={navigationController}
+        <div className="text-center mt-10">
+          <Link
+            href="/"
             className=" w-1/3 bg-yellow-500 flex flex-row mx-auto justify-center items-center text-white border border-blue-700 px-3 py-2 "
           >
             <AiFillHome className="mr-1" /> <span>Back to Home</span>
-          </button>
+          </Link>
         </div>
       </div>
     </div>

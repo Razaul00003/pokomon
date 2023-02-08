@@ -96,6 +96,7 @@ const TextContent = () => {
                 dignissimos magnam voluptas recusandae consequuntur amet
                 repudiandae suscipit quis, consectetur harum cupiditate quo!
               </p>
+              {/* fixed breakpoint issue */}
               <div className="grid grid-cols-3 gap-1 pt-4">
                 <Image
                   className=""
@@ -156,7 +157,7 @@ const TextContent = () => {
             </div>
           </div>
           {/* shows only on smaller device */}
-          <div className="p-3 sm:block lg:hidden text-justify">
+          <div className="p-3 block lg:hidden text-justify">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Reiciendis possimus accusamus suscipit nobis rerum ex provident
@@ -166,7 +167,7 @@ const TextContent = () => {
               odio magnam. Delectus, repellat! Sequi facere distinctio unde,
               sint, eum adipisci quasi id, eveniet impedit atque fugit!
             </p>
-            <div className=" sm:grid grid-cols-3   gap-3  py-10 ">
+            <div className=" grid grid-cols-3   gap-3  py-10 ">
               <div className="row-start-2  row-span-3 ">
                 <Image
                   src="/Assets/Image04.png"
